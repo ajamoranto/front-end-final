@@ -8,16 +8,16 @@
       <form (ngSubmit)="onSubmit(cityForm)" #cityForm="ngForm">
         <div class="form-group">
           <div class="col-sm-4 col-sm-offset-4">
-            <select id="city" class="form-control" name="city" [(ngModel)]="city" placeholder="Pick a City">
-            
-              <option value="seattle">Seattle, WA</option>
-              <option value="newyork">New York, NY</option>
-              <option value="losangeles">Los Angeles, CA</option>
-              <option value="portland">Portland, OR</option>
-              <option value="houston">Houston, TX</option>
-              <option value="miami">Miami, FL</option>
-              <option value="indianapolis">Indianapolis, IN</option>
-              <option value="boston">Boston, MA</option>
+            <select id="city" class="form-control" name="city" [(ngModel)]="city">
+              <option value="placeholder" hidden>Pick a City</option>
+              <option>Seattle, WA</option>
+              <option>New York, NY</option>
+              <option>Los Angeles, CA</option>
+              <option>Portland, OR</option>
+              <option>Houston, TX</option>
+              <option>Miami, FL</option>
+              <option>Indianapolis, IN</option>
+              <option>Boston, MA</option>
             </select>
           </div>
           <button (click)="onSubmit()" type="submit" class="btn btn-success" routerLink="/display">Go</button>

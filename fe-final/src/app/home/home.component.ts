@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   cityForm: NgForm;
-  city;
+  city = "placeholder";
 
   ngOnInit() {
   }
