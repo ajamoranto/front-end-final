@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { FoodService } from '../food.service';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +9,25 @@ import { NgForm } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @Output() cityString = new EventEmitter();
+
+  constructor(private fs: FoodService) { }
 
   cityForm: NgForm;
   city = "placeholder";
+  foodInfo;
 
   ngOnInit() {
   }
 
-  onSubmit(cityForm){
+  onSubmit(){
     console.log(this.city)
+    // this.cityString.emit(this.city);
+    this.fs.getFoodInfo(this.city)
+    .subscribe(
+      foodInfo => {
+        this.foodInfo = foodInfo[0];
+        console.log(this.foodInfo)
+    })
   }
-
 }

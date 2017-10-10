@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FoodService } from '../food.service';
 
 @Component({
   selector: 'app-display',
@@ -7,9 +8,15 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
-  constructor() { }
+  foodInfo;
+
+  constructor(private foodService: FoodService) { }
+
+  getDataFromService(){
+  }
 
   ngOnInit() {
+
   }
 
 }
