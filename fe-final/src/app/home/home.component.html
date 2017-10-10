@@ -5,22 +5,22 @@
       </h1>
     </div>
     <div class="row">
-      <form>
+      <form #cityForm="ngForm">
         <div class="form-group">
           <div class="col-sm-4 col-sm-offset-4">
-            <select id="city_id" class="form-control" name="city_id">
-              <option [value]="">Pick a City</option>
-              <option [value]="">Seattle, WA</option>
-              <option [value]="">New York, NY</option>
-              <option [value]="">Los Angeles, CA</option>
-              <option [value]="">Portland, OR</option>
-              <option [value]="">Houston, TX</option>
-              <option [value]="">Miami, FL</option>
-              <option [value]="">Indianapolis, IN</option>
-              <option [value]="">Boston, MA</option>
+            <select id="city_id" class="form-control" name="city_id" value="">
+              <option>Pick a City</option>
+              <option>Seattle, WA</option>
+              <option>New York, NY</option>
+              <option>Los Angeles, CA</option>
+              <option>Portland, OR</option>
+              <option>Houston, TX</option>
+              <option>Miami, FL</option>
+              <option>Indianapolis, IN</option>
+              <option>Boston, MA</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-success" routerLink="/display">Go</button>
+          <button (click)="onSubmit()" class="btn btn-success" routerLink="/display">Go</button>
         </div>
       </form>
   
