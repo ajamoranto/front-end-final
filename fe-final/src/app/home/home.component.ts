@@ -10,14 +10,14 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  @Input()
-  city_id=null;
+  cityForm: NgForm;
+  city;
 
   ngOnInit() {
   }
 
-  onSubmit(){
-    console.log(this.city_id)
+  onSubmit(cityForm){
+    console.log(this.city)
   }
 
 }
