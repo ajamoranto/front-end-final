@@ -9,13 +9,14 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FoodService {
 
-  private baseUrl: string = "http://jservice.io/api/random";
+  private baseUrl: string = "http://localhost:8080/api/";
+  
 
   constructor(private http: Http) { }
 
-  getFoodInfo(): Observable<any> {
+  getFoodInfo(city): Observable<any> {
 
-    return this.http.get(this.baseUrl)
+    return this.http.get(this.baseUrl + city)
       .map(result => {
         return result.json()
       })
