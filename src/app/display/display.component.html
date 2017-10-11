@@ -1,11 +1,12 @@
 <br>
+<br><br><br><br><br><br>
 <div class="row">
     <div class="col-sm-6 col-md-4 col-sm-offset-4">
       <div class="thumbnail">
         <img src="" alt="...">
         <div class="caption">
-          <h3>{{foodInfo?.name | json}}</h3>
-          <p id="description">{{foodInfo?.description | json}}</p>
+          <h3>{{foodInfo?.name}}</h3>
+          <p id="description">{{foodInfo?.description}}</p>
           <p><a class="btn btn-danger" role="button" (click)="onNah()"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a> <a href="#" class="btn btn-primary pull-right" role="button" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span> Yah!</a></p>
         </div>
       </div>
@@ -17,10 +18,18 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Restaurant Name Here</h4>
+          <h4 class="modal-title" id="myModalLabel">{{foodInfo?.restaurant?.restaurantName}}</h4>
+          {{foodInfo?.restaurant?.address}}
+          <br>
+          {{foodInfo?.restaurant?.phone}}
         </div>
         <div class="modal-body">
-          Restaurant Details Here
+            <img src="" alt="...">
+            <div class="caption">
+              <h3>{{foodInfo?.name}}</h3>
+              <p id="mDescription">{{foodInfo?.description}}</p>
+              <p id="price">{{foodInfo?.basePrice | currency: 'USD':true}}</p>
+              </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

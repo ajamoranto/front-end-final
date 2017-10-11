@@ -3,3 +3,18 @@
     background-color: #A8DEEE;
     border: 1px solid #428BCA;
 }
+
+body {
+    background-image: url("/assets/images/grumble-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.thumbnail {
+    background-color: rgba(0, 0, 0, .1);
+    border: none;
+}
+
+#title {
+    font-family: 'Rye', cursive;
+}

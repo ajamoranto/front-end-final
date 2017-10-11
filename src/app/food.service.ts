@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
 export class FoodService {
 
   private baseUrl: string = "https://polar-tundra-24242.herokuapp.com/api/";
+  private updateUrl: string = "https://polar-tundra-24242.herokuapp.com/api/item";
   
   constructor(private http: Http) { }
 
@@ -24,7 +25,7 @@ export class FoodService {
 
   getNewFood(city): Observable<any> {
     
-    return this.http.get(this.baseUrl + city)
+    return this.http.get(this.updateUrl)
       .map(result => {
         return result.json()
       })

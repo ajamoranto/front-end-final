@@ -26,6 +26,7 @@ export class AppComponent {
         this.foodInfo = foodInfo;
         console.log(this.foodInfo.name)
         console.log(this.foodInfo.description)
+        console.log(this.foodInfo)
       })
   }
 

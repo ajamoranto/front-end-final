@@ -1,9 +1,19 @@
 #description {
-    font-family: 'Pompiere', cursive;
-    color: purple;
-    font-size: 20px;
+
+    color: #3B3C3F;
+    text-shadow: 1px 1px grey;
+    font-size: 16px;
+
+}
+
+#mDescription {
+
+    color: #3B3C3F;
+    font-size: 16px;
+
 }
 
 h3{
-    font-family: 'Bowlby One SC', cursive;
+    font-size: 26px;
+    font-family: 'Rye', cursive;
 }
