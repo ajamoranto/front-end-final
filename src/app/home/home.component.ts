@@ -9,7 +9,7 @@ import { FoodService } from '../food.service';
 })
 export class HomeComponent implements OnInit {
 
-  @Output() cityString = new EventEmitter();
+  @Output() cityVal = new EventEmitter();
 
   constructor(private fs: FoodService) { }
 
@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
     console.log(this.city)
-    // this.cityString.emit(this.city);
     this.fs.getFoodInfo(this.city)
     .subscribe(
       foodInfo => {
         this.foodInfo = foodInfo[0];
+        localStorage.setItem('cityVal', this.city)
         console.log(this.foodInfo)
     })
   }

@@ -7,7 +7,7 @@ import { DisplayComponent }   from '../display/display.component';
 import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'home',  component: HomeComponent },
   { path: 'display',  component: DisplayComponent },
 
