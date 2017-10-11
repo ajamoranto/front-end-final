@@ -9,25 +9,17 @@ import { FoodService } from '../food.service';
 })
 export class HomeComponent implements OnInit {
 
-  @Output() cityVal = new EventEmitter();
+  @Output() citySelected = new EventEmitter();
 
   constructor(private fs: FoodService) { }
 
   cityForm: NgForm;
   city = "placeholder";
-  foodInfo;
 
   ngOnInit() {
   }
 
   onSubmit(){
-    console.log(this.city)
-    this.fs.getFoodInfo(this.city)
-    .subscribe(
-      foodInfo => {
-        this.foodInfo = foodInfo[0];
-        localStorage.setItem('cityVal', this.city)
-        console.log(this.foodInfo)
-    })
+    this.citySelected.emit(this.city)
   }
 }

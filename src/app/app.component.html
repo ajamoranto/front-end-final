@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-    <app-home></app-home>
-    <router-outlet></router-outlet>
+    <app-home (citySelected)="selectCity($event)"></app-home>
+    <app-display *ngIf="city" (nah)="selectCity()" (yah)="selectCity()"></app-display>
 </div>

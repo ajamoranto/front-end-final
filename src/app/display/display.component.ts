@@ -9,29 +9,22 @@ import { FoodService } from '../food.service';
 })
 export class DisplayComponent implements OnInit {
 
-  @Input() city;
   
-  foodInfo;
+
+  @Output() nah = new EventEmitter();
+  @Output() yah = new EventEmitter();
   
   constructor(private fs: FoodService) { }
-
-  getDataFromService(){
-  }
-
   
   ngOnInit() {
   }
 
   onNah(){
-    console.log(this.city)
-    this.fs.getNewFood(this.city)
-    .subscribe(
-      foodInfo => {
-        this.foodInfo = foodInfo[0];
-        console.log(this.foodInfo)
-    })
+    this.nah.emit()
   }
 
-
+  onYah() {
+    this.yah.emit()
+  }
 
 }

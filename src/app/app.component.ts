@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
+import { FoodService } from './food.service';
 import { HomeComponent } from './home/home.component';
 
 
@@ -10,4 +11,22 @@ import { HomeComponent } from './home/home.component';
 })
 export class AppComponent {
   @Input() erroMessage: string;
+  city;
+  foodInfo;
+
+  constructor(private fs: FoodService) { }
+
+  selectCity(selectedCity) {
+    if(selectedCity){
+      this.city = selectedCity;
+    }
+
+    this.fs.getFoodInfo(selectedCity || this.city)
+      .subscribe(foodInfo => {
+        this.foodInfo = foodInfo;
+        console.log(this.foodInfo.name)
+        console.log(this.foodInfo.description)
+      })
+  }
+
 }

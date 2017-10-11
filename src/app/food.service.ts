@@ -9,15 +9,11 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FoodService {
 
-  city;
-
-  private baseUrl: string = "http://localhost:8080/api/";
+  private baseUrl: string = "https://polar-tundra-24242.herokuapp.com/api/";
   
   constructor(private http: Http) { }
 
   getFoodInfo(city): Observable<any> {
-
-    this.city=city;
 
     return this.http.get(this.baseUrl + city)
       .map(result => {
@@ -28,10 +24,11 @@ export class FoodService {
 
   getNewFood(city): Observable<any> {
     
-        return this.http.get(this.baseUrl + city)
-          .map(result => {
-            return result.json()
-          })
+    return this.http.get(this.baseUrl + city)
+      .map(result => {
+        return result.json()
+      })
     
-      }
+  }
+
 }
