@@ -13,6 +13,7 @@ export class DisplayComponent implements OnInit {
 
   @Output() nah = new EventEmitter();
   @Output() yah = new EventEmitter();
+  @Input() foodInfo;
   
   constructor(private fs: FoodService) { }
   
