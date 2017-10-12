@@ -15,26 +15,41 @@ interface Coordinates {
 export class HomeComponent implements OnInit {
 
   @Output() citySelected = new EventEmitter();
-  @Output() latLong = new EventEmitter();
 
   constructor(private fs: FoodService) { }
 
   cityForm: NgForm;
   city = "placeholder";
+  foodInfo;
   positionInfo;
   coords: Coordinates;
 
 
   ngOnInit() {
+    this.showPosition();
   }
 
   onSubmit() {
     this.citySelected.emit(this.city)
   }
 
+  onOtherSubmit(coords) {
+    this.fs.getFoodInfoLocation(coords)
+    .subscribe(foodInfo => {
+      this.foodInfo = foodInfo;
+      console.log(this.foodInfo.name)
+      console.log(this.foodInfo.description)
+      console.log(this.foodInfo)
+    })
+  }
+
+  // onOtherSubmit(){
+  //   getFoodInfoLocation(this.coords)
+  // }
+
   onLocate() {
     console.log(this.positionInfo)
-    this.latLong.emit(this.positionInfo)
+    
   }
 
   showPosition() {

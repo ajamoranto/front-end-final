@@ -23,6 +23,21 @@ export class FoodService {
 
   }
 
+  getFoodInfoLocation(coords): Observable<any> {
+
+    var url = this.baseUrl + coords.latitude.toString() +"/"+ coords.longitude.toString()
+
+        console.log(coords.latitude.toFixed(2) +","+ coords.longitude.toFixed(2))
+        console.log(coords.latitude.toString() +","+ coords.longitude.toString())
+        console.log(this.baseUrl + coords.latitude +"/"+ coords.longitude)
+    
+        return this.http.get(url)
+          .map(result => {
+            return result.json()
+          })
+    
+      }
+
   getNewFood(city): Observable<any> {
     
     return this.http.get(this.updateUrl)
