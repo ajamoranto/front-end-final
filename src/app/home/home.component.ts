@@ -10,16 +10,25 @@ import { FoodService } from '../food.service';
 export class HomeComponent implements OnInit {
 
   @Output() citySelected = new EventEmitter();
+  @Output() latLong = new EventEmitter();
 
   constructor(private fs: FoodService) { }
 
   cityForm: NgForm;
   city = "placeholder";
+  positionInfo;
+  coords;
+
 
   ngOnInit() {
   }
 
   onSubmit(){
     this.citySelected.emit(this.city)
+  }
+
+  onLocate(){
+    console.log(this.positionInfo)
+    this.latLong.emit(this.positionInfo)
   }
 }

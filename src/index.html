@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>grmbl</title>
+  <title>GRMBL</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,19 @@
   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Pompiere" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript">
+    function showPosition(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function(position){
+                var positionInfo = position.coords.latitude + "/" + position.coords.longitude;
+                document.getElementById("result").innerHTML = positionInfo;
+            });
+        } else{
+            alert("Sorry, your browser does not support HTML5 geolocation.");
+        }
+    }
+</script>
 </head>
 <body>
   <app-root></app-root>

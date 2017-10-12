@@ -11,7 +11,7 @@ select, option {
 body {
     background-image: url("/assets/images/grumble-bg.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .thumbnail {
