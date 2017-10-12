@@ -7,7 +7,7 @@
     <div class="row">
       <form>
         <div class="form-group">
-          <div class="col-sm-4 col-sm-offset-4">
+          <div class="col-sm-4 col-sm-offset-4 col-md-4 col-lg-4">
             <select id="city" class="form-control" name="city" [(ngModel)]="city">
               <option value="placeholder" hidden>Pick a City</option>
               <option value="seattle">Seattle, WA</option>
@@ -20,8 +20,8 @@
               <option value="boston">Boston, MA</option>
             </select>
           </div>
-          <button (click)="onSubmit(city)" type="submit" class="btn btn-success">Go</button>
         </div>
+        <button (click)="onSubmit(city)" type="submit" class="btn btn-success" id="go"><span class="fa fa-cutlery"></span> Go</button>
       </form>
   
     </div>
