@@ -2,6 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FoodService } from '../food.service';
 
+interface Coordinates {
+  latitude?: number;
+  longitude?: number;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,18 +22,30 @@ export class HomeComponent implements OnInit {
   cityForm: NgForm;
   city = "placeholder";
   positionInfo;
-  coords;
+  coords: Coordinates;
 
 
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit() {
     this.citySelected.emit(this.city)
   }
 
-  onLocate(){
+  onLocate() {
     console.log(this.positionInfo)
     this.latLong.emit(this.positionInfo)
+  }
+
+  showPosition() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.coords = position.coords;
+        // Whatever. Talk to Trace. Fucker. -- Ernest Hemingway
+
+      });
+    } else {
+      alert("Sorry, your browser does not support HTML5 geolocation.");
+    }
   }
 }
