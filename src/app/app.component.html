@@ -2,4 +2,5 @@
 <div class="container">
     <app-home (citySelected)="selectCity($event)"></app-home>
     <app-display *ngIf="city || coords" (nah)="selectCity()" (yah)="selectCity()" [foodInfo]="foodInfo"></app-display>
+    <app-display *ngIf="coords" (nah)="selectCity()" (yah)="selectCity()" [foodInfo]="foodInfo"></app-display>
 </div>
