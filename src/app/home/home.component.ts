@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log("This is coords on init: " + this.coords)
     this.showPosition();
   }
 

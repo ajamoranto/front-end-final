@@ -30,6 +30,8 @@ export class FoodService {
         console.log(coords.latitude.toFixed(2) +","+ coords.longitude.toFixed(2))
         console.log(coords.latitude.toString() +","+ coords.longitude.toString())
         console.log(this.baseUrl + coords.latitude +"/"+ coords.longitude)
+
+        console.log("This should be coords: " + coords)
     
         return this.http.get(url)
           .map(result => {
