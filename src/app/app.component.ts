@@ -13,22 +13,40 @@ export class AppComponent {
   @Input() erroMessage: string;
   city;
   foodInfo;
-  useLocation;
+  coords;
 
   constructor(private fs: FoodService) { }
 
-  selectCity(selectedCity) {
-    if(selectedCity){
-      this.city = selectedCity;
+  selectCity(location) {
+    if(location && location.city) {
+      this.city = location.city;
+      this.getWithCity(this.city)
+    } else if (location && location.coords) {
+      this.coords = location.coords
+      this.getWithCoords(this.coords)
+    } else {
+      this.getWithCity(this.city)
     }
+  }
 
+  getWithCity(selectedCity) {
     this.fs.getFoodInfo(selectedCity || this.city)
-      .subscribe(foodInfo => {
-        this.foodInfo = foodInfo;
-        console.log(this.foodInfo.name)
-        console.log(this.foodInfo.description)
-        console.log(this.foodInfo)
-      })
+    .subscribe(foodInfo => {
+      this.foodInfo = foodInfo;
+      console.log(this.foodInfo.name)
+      console.log(this.foodInfo.description)
+      console.log(this.foodInfo)
+    })
+  }
+  
+  getWithCoords(coords) {
+    this.fs.getFoodInfoLocation(coords)
+    .subscribe(foodInfo => {
+      this.foodInfo = foodInfo;
+      console.log(this.foodInfo.name)
+      console.log(this.foodInfo.description)
+      console.log(this.foodInfo)
+    })
   }
 
 }

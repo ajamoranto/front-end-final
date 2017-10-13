@@ -15,6 +15,7 @@ interface Coordinates {
 export class HomeComponent implements OnInit {
 
   @Output() citySelected = new EventEmitter();
+  @Output() locationSelected = new EventEmitter();
 
   constructor(private fs: FoodService) { }
 
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   foodInfo;
   positionInfo;
   coords: Coordinates;
+  useLocation;
 
 
 
@@ -31,20 +33,30 @@ export class HomeComponent implements OnInit {
     this.showPosition();
   }
 
-  onSubmit() {
-    this.citySelected.emit(this.city)
+  onSubmit(locationPermission) {
+    if (locationPermission) {
+      this.citySelected.emit({ coords: this.coords })
+    } else {
+      this.citySelected.emit({ city: this.city })
+    }
   }
 
-  onOtherSubmit(coords) {
-    console.log("This is coords after submit: " + this.coords)
-    this.fs.getFoodInfoLocation(coords)
-    .subscribe(foodInfo => {
-      this.foodInfo = foodInfo;
-      console.log(this.foodInfo.name)
-      console.log(this.foodInfo.description)
-      console.log(this.foodInfo)
-    })
-  }
+  // onOtherSubmit(message) {
+  //   console.log("This is coords after submit: " + this.coords)
+  //   this.fs.getFoodInfoLocation(this.coords)
+  //     .subscribe(
+  //       foodInfo => {
+  //         this.locationSelected.emit(message + ' on success')
+  //         this.foodInfo = foodInfo;
+  //         console.log(this.foodInfo.name)
+  //         console.log(this.foodInfo.description)
+  //         console.log(this.foodInfo)
+  //       },
+  //       error => {
+  //         this.locationSelected.emit(message + ' on error') //TODO: remove
+  //       }
+  //     )
+  // }
 
   // onOtherSubmit(){
   //   getFoodInfoLocation(this.coords)
