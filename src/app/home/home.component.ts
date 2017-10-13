@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   coords: Coordinates;
 
 
+
   ngOnInit() {
     console.log("This is coords on init: " + this.coords)
     this.showPosition();
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
   }
 
   onOtherSubmit(coords) {
+    console.log("This is coords after submit: " + this.coords)
     this.fs.getFoodInfoLocation(coords)
     .subscribe(foodInfo => {
       this.foodInfo = foodInfo;

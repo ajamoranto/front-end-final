@@ -13,6 +13,7 @@ export class AppComponent {
   @Input() erroMessage: string;
   city;
   foodInfo;
+  useLocation;
 
   constructor(private fs: FoodService) { }
 
