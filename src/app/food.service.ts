@@ -30,7 +30,7 @@ export class FoodService {
 
   getFoodInfoLocation(coords, radius): Observable<any> {
 
-    var url = this.baseUrl + coords.latitude +"/"+ coords.longitude +"/"+ radius
+    var url = this.baseUrl + coords.latitude +"/"+ coords.longitude +"/"+ radius +"/"
 
       // console.log(url)
     

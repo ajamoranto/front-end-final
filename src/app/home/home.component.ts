@@ -38,10 +38,10 @@ export class HomeComponent implements OnInit {
   onSubmit(locationPermission) {
     if (locationPermission) {
       this.citySelected.emit({ coords: this.coords, radius: this.radius })
-      console.log (this.radius)
+      console.log ("coords rad: " + this.radius)
     } else {
       this.citySelected.emit({ city: this.city, radius: this.radius })
-      console.log (this.radius)
+      console.log ("city rad: " + this.radius)
     }
   }
 

@@ -25,7 +25,8 @@ export class AppComponent {
       this.radius = location.radius;
       this.getWithCity(this.city, this.radius)
     } else if (location && location.coords) {
-      this.coords = location.coords
+      this.coords = location.coords;
+      this.radius = location.radius;
       this.getWithCoords(this.coords, this.radius)
     } else {
       this.getWithCity(this.city, this.radius)
