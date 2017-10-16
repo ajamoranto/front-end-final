@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(private fs: FoodService) { }
 
   cityForm: NgForm;
-  city = "placeholder";
+  city = "";
   foodInfo;
   positionInfo;
   coords: Coordinates;

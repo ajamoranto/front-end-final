@@ -1,40 +1,70 @@
 <br>
 <br><br>
 <div class="row">
-    <div class="col-sm-6 col-md-4 col-sm-offset-4">
-      <div class="thumbnail">
+  <div class="col-sm-6 col-md-4 col-sm-offset-4">
+    <div class="thumbnail">
+      <img src="{{foodInfo?.imageURL}}" width="100%" alt="Loading image...">
+      <div class="caption">
+        <h3>{{foodInfo?.name}}</h3>
+        <p id="description">{{foodInfo?.description}}</p>
+        <p><a class="btn btn-default" role="button" (click)="onNah()"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>          <a href="#" class="btn btn-success pull-right" role="button" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span> Yah!</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+        <h4 class="modal-title" id="myModalLabel">{{foodInfo?.restaurant?.restaurantName}}</h4>
+        <a id="directions" href="https://www.google.com/maps/place/{{foodInfo?.restaurant?.address}}+{{foodInfo?.restaurant?.city}}+{{foodInfo?.restaurant?.state}}"
+          target="_blank"><span class="fa fa-map"></span> {{foodInfo?.restaurant?.address}}</a>
+        <br> {{foodInfo?.restaurant?.phone}}
+      </div>
+      <div class="modal-body">
         <img src="{{foodInfo?.imageURL}}" width="100%" alt="Loading image...">
         <div class="caption">
           <h3>{{foodInfo?.name}}</h3>
-          <p id="description">{{foodInfo?.description}}</p>
-          <p><a class="btn btn-default" role="button" (click)="onNah()"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a> <a href="#" class="btn btn-success pull-right" role="button" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span> Yah!</a></p>
+          <p id="mDescription">{{foodInfo?.description}}</p>
+          <p id="price">{{foodInfo?.basePrice | currency: 'USD':true}}</p>
         </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-default" role="button" (click)="onNah()" data-dismiss="modal"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>
+        <a href="#" class="btn btn-success pull-right" role="button" data-toggle="modal" data-target="#myModal2"><span class="fa fa-share" aria-hidden="true"> </span> Share!</a>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
+
+<div class="modal" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-          <h4 class="modal-title" id="myModalLabel">{{foodInfo?.restaurant?.restaurantName}}</h4>
-            <a id="directions" href="https://www.google.com/maps/place/{{foodInfo?.restaurant?.address}}+{{foodInfo?.restaurant?.city}}+{{foodInfo?.restaurant?.state}}" target="_blank"><span class="fa fa-map"></span> {{foodInfo?.restaurant?.address}}</a>
-          <br>
-          {{foodInfo?.restaurant?.phone}}
-        </div>
-        <div class="modal-body">
-            <img src="{{foodInfo?.imageURL}}" width="100%" alt="Loading image...">
-            <div class="caption">
-              <h3>{{foodInfo?.name}}</h3>
-              <p id="mDescription">{{foodInfo?.description}}</p>
-              <p id="price">{{foodInfo?.basePrice | currency: 'USD':true}}</p>
-              </div>
-        </div>
-        <div class="modal-footer">
-            <a class="btn btn-default" role="button" (click)="onNah()" data-dismiss="modal"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>
-            <a href="#" class="btn btn-success pull-right" role="button" data-toggle="modal" data-target="#myModal2"><span class="fa fa-diamond" aria-hidden="true"> </span> Yah!</a>
-        </div>
+        <h4 class="modal-title" id="myModalLabel2">Share Your Dish Pic!</h4>
       </div>
+
+      <div class="modal-body">
+        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+          aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+          sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+          labore sustainable VHS.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+      </div>
+
     </div>
+    <!-- modal-content -->
   </div>
+  <!-- modal-dialog -->
+</div>
+<!-- modal -->
