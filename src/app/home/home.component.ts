@@ -16,11 +16,13 @@ export class HomeComponent implements OnInit {
 
   @Output() citySelected = new EventEmitter();
   @Output() locationSelected = new EventEmitter();
+  @Output() radiusSelected = new EventEmitter();
 
   constructor(private fs: FoodService) { }
 
   cityForm: NgForm;
   city = "";
+  radius = "2";
   foodInfo;
   positionInfo;
   coords: Coordinates;
@@ -35,9 +37,11 @@ export class HomeComponent implements OnInit {
 
   onSubmit(locationPermission) {
     if (locationPermission) {
-      this.citySelected.emit({ coords: this.coords })
+      this.citySelected.emit({ coords: this.coords, radius: this.radius })
+      console.log (this.radius)
     } else {
-      this.citySelected.emit({ city: this.city })
+      this.citySelected.emit({ city: this.city, radius: this.radius })
+      console.log (this.radius)
     }
   }
 

@@ -14,25 +14,30 @@ export class FoodService {
   
   constructor(private http: Http) { }
 
-  getFoodInfo(city): Observable<any> {
+  getFoodInfo(city, radius): Observable<any> {
 
-    return this.http.get(this.baseUrl + city)
+    var url = this.baseUrl + city +"/"+ radius
+    
+    // console.log(url)
+    
+
+    return this.http.get(this.baseUrl + city + "/" +radius + "/")
       .map(result => {
         return result.json()
       })
 
   }
 
-  getFoodInfoLocation(coords): Observable<any> {
+  getFoodInfoLocation(coords, radius): Observable<any> {
 
-    var url = this.baseUrl + coords.latitude +"/"+ coords.longitude+"/"
+    var url = this.baseUrl + coords.latitude +"/"+ coords.longitude +"/"+ radius
 
-        console.log(url)
+      // console.log(url)
     
-        return this.http.get(url)
-          .map(result => {
-            return result.json()
-          })
+      return this.http.get(url)
+        .map(result => {
+          return result.json()
+        })
     
       }
 
