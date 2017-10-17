@@ -18,12 +18,12 @@ export class FoodService {
 
 
 
-    var url = this.baseUrl + city +"/"+ radius
+    var url = this.baseUrl + city.replace(/\s/g,'+') +"/"+ radius
     
-    // console.log(url)
+    console.log(url)
     
 
-    return this.http.get(this.baseUrl + city.split(' ') + "/" +radius + "/")
+    return this.http.get(this.baseUrl + city.replace(/\s/g,'+') + "/" +radius + "/")
       .map(result => {
         return result.json()
       })
