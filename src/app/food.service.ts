@@ -16,12 +16,14 @@ export class FoodService {
 
   getFoodInfo(city, radius): Observable<any> {
 
+
+
     var url = this.baseUrl + city +"/"+ radius
     
     // console.log(url)
     
 
-    return this.http.get(this.baseUrl + city + "/" +radius + "/")
+    return this.http.get(this.baseUrl + city.split(' ') + "/" +radius + "/")
       .map(result => {
         return result.json()
       })
