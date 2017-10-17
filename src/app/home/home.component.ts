@@ -29,48 +29,29 @@ export class HomeComponent implements OnInit {
   useLocation;
 
 
-
+  //loading position on init to reduce waiting time to use location
   ngOnInit() {
     console.log("This is coords on init: " + this.coords)
     this.showPosition();
   }
 
+  //this method waits for location permission and emits location and radius if allowed, uses city and radius if not
   onSubmit(locationPermission) {
     if (locationPermission) {
       this.citySelected.emit({ coords: this.coords, radius: this.radius })
-      console.log ("coords rad: " + this.radius)
+      console.log("coords rad: " + this.radius)
     } else {
       this.citySelected.emit({ city: this.city, radius: this.radius })
-      console.log ("city rad: " + this.radius)
+      console.log("city rad: " + this.radius)
     }
   }
 
-  // onOtherSubmit(message) {
-  //   console.log("This is coords after submit: " + this.coords)
-  //   this.fs.getFoodInfoLocation(this.coords)
-  //     .subscribe(
-  //       foodInfo => {
-  //         this.locationSelected.emit(message + ' on success')
-  //         this.foodInfo = foodInfo;
-  //         console.log(this.foodInfo.name)
-  //         console.log(this.foodInfo.description)
-  //         console.log(this.foodInfo)
-  //       },
-  //       error => {
-  //         this.locationSelected.emit(message + ' on error') //TODO: remove
-  //       }
-  //     )
-  // }
-
-  // onOtherSubmit(){
-  //   getFoodInfoLocation(this.coords)
-  // }
-
   onLocate() {
     console.log(this.positionInfo)
-    
+
   }
 
+  //this method is used to get the coordinates used for "use my location", alerts if not supported
   showPosition() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {

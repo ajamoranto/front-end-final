@@ -17,10 +17,10 @@ export class AppComponent {
   radius;
 
   constructor(private fs: FoodService) { }
-
+  //main method that uses the two below it so we can search based off city/address or coordinates
   selectCity(location) {
     console.log(location);
-    if(location && location.city) {
+    if (location && location.city) {
       this.city = location.city;
       this.radius = location.radius;
       this.getWithCity(this.city, this.radius)
@@ -32,28 +32,28 @@ export class AppComponent {
       this.getWithCity(this.city, this.radius)
     }
   }
-
+  //method for using city/address
   getWithCity(selectedCity, radiusSelected) {
     this.fs.getFoodInfo(selectedCity || this.city, this.radius)
-    .subscribe(foodInfo => {
-      this.foodInfo = foodInfo;
-      console.log(this.radius)
-      console.log(this.city)
-      console.log(this.foodInfo.name)
-      console.log(this.foodInfo.description)
-      console.log(this.foodInfo)
-    })
+      .subscribe(foodInfo => {
+        this.foodInfo = foodInfo;
+        console.log(this.radius)
+        console.log(this.city)
+        console.log(this.foodInfo.name)
+        console.log(this.foodInfo.description)
+        console.log(this.foodInfo)
+      })
   }
-  
+  //method for using location
   getWithCoords(coords, radiusSelected) {
     this.fs.getFoodInfoLocation(coords, this.radius)
-    .subscribe(foodInfo => {
-      this.foodInfo = foodInfo;
-      console.log(this.foodInfo.name)
-      console.log(this.foodInfo.description)
-      console.log(this.foodInfo)
-      console.log(this.radius)
-    })
+      .subscribe(foodInfo => {
+        this.foodInfo = foodInfo;
+        console.log(this.foodInfo.name)
+        console.log(this.foodInfo.description)
+        console.log(this.foodInfo)
+        console.log(this.radius)
+      })
   }
 
 }
