@@ -9,31 +9,22 @@
     <form>
 
       <div class="form-group">
-        <div class="col-sm-4 col-sm-offset-4 col-md-4 col-lg-4">
+        <div class="col col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
           <input id="city" class="form-control" name="city" [(ngModel)]="city" placeholder="Enter a city or full address">
-          <br>
-          <!-- <input id="radius" class="form-control" name="radius" [(ngModel)]="radius" placeholder="Enter a radius"> -->
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4 col-md-4 col-lg-4">
-          <div class="range range-success">
-            <input id="radius" type="range" name="radius" min="1" max="15" value="2" [(ngModel)]="radius" onchange="rangeSuccess.value=value">
-            <output id="rangeSuccess">2</output>
-          </div>
         </div>
       </div>
-
-      <div class="col-xs-2 col-xs-offset-3 col-sm-2 col-sm-offset-5 col-md-4 col-lg-4">
-        <br>
-        <!--Position information will be inserted here-->
-        <button (click)="onSubmit()" type="submit" class="btn btn-success" id="go"><span class="fa fa-cutlery"></span> Go</button>
-        <button
-          *ngIf="coords" type="button" class="btn btn-primary" (click)="onSubmit(true)"><span class="fa fa-location-arrow"></span> Use my location</button>
+      <div class="col col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+        <div class="range range-success">
+          <input id="radius" type="range" name="radius" min="1" max="15" value="2" [(ngModel)]="radius" onchange="rangeSuccess.value=value">
+          <output id="rangeSuccess">2</output>
+        </div>
       </div>
-
     </form>
-
+  </div>
+  <div class="buttons">
+    <br>
+    <!--Position information will be inserted here-->
+    <button (click)="onSubmit()" type="submit" class="btn btn-success" id="go"><span class="fa fa-cutlery"></span> Go</button>
+    <button *ngIf="coords" type="button" class="btn btn-primary" (click)="onSubmit(true)"><span class="fa fa-location-arrow"></span> Use my location</button>
   </div>
 </div>
