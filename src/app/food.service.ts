@@ -44,7 +44,7 @@ export class FoodService {
 
   }
   //this method is used to get a new dish, hits different endpoint to update
-  getNewFood(city): Observable<any> {
+  getNewFood(): Observable<any> {
 
     return this.http.get(this.updateUrl)
       .map(result => {
