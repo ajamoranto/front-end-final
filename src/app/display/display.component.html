@@ -1,5 +1,6 @@
 <br>
-<br><br>
+<br>
+<br>
 <div class="row">
   <div class="col-sm-6 col-md-4 col-sm-offset-4">
     <div class="thumbnail">
@@ -7,7 +8,12 @@
       <div class="caption">
         <h3>{{foodInfo?.name}}</h3>
         <p id="description">{{foodInfo?.description}}</p>
-        <p><a class="btn btn-default" role="button" (click)="onNah()"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>          <a href="#" class="btn btn-success pull-right" role="button" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span> Yah!</a></p>
+        <p>
+          <a class="btn btn-default" role="button" (click)="onNah()">
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>
+          <a href="#" class="btn btn-success pull-right" role="button" data-toggle="modal" data-target="#myModal">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span> Yah!</a>
+        </p>
       </div>
     </div>
   </div>
@@ -17,10 +23,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title" id="myModalLabel"><a href="{{foodInfo?.restaurant?.url}}" target="_blank" id="info">{{foodInfo?.restaurant?.restaurantName}}</a></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          <a href="{{foodInfo?.restaurant?.url}}" target="_blank" id="info">{{foodInfo?.restaurant?.restaurantName}}</a>
+        </h4>
         <a id="directions" href="https://www.google.com/maps/place/{{foodInfo?.restaurant?.address}}+{{foodInfo?.restaurant?.city}}+{{foodInfo?.restaurant?.state}}"
-          target="_blank"><span class="fa fa-map"></span> {{foodInfo?.restaurant?.address}}</a>
+          target="_blank">
+          <span class="fa fa-map"></span> {{foodInfo?.restaurant?.address}}</a>
         <br> {{foodInfo?.restaurant?.phone}}
       </div>
       <div class="modal-body">
@@ -32,8 +43,10 @@
         </div>
       </div>
       <div class="modal-footer">
-        <a class="btn btn-default" role="button" (click)="onNah()" data-dismiss="modal"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>
-        <a href="{{foodInfo?.restaurant?.url}}" target="_blank" class="btn btn-success pull-right" role="button"><span class="fa fa-diamond" aria-hidden="true"> </span> Check it out!</a>
+        <a class="btn btn-default" role="button" (click)="onNah()" data-dismiss="modal">
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>
+        <a href="{{foodInfo?.restaurant?.url}}" target="_blank" class="btn btn-success pull-right" role="button">
+          <span class="fa fa-diamond" aria-hidden="true"> </span> Check it out!</a>
       </div>
     </div>
   </div>

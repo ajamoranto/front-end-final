@@ -9,8 +9,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FoodService {
 
-  private baseUrl: string = "https://sheltered-refuge-69690.herokuapp.com/api/";
-  private updateUrl: string = "https://sheltered-refuge-69690.herokuapp.com/api/item";
+  private baseUrl: string = "https://nameless-inlet-81751.herokuapp.com/api/";
+  private updateUrl: string = "https://nameless-inlet-81751.herokuapp.com/api/item";
 
   constructor(private http: Http) { }
 

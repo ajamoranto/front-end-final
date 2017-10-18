@@ -55,5 +55,16 @@ export class AppComponent {
         console.log(this.radius)
       })
   }
+  //method for nah button to call getNewFood from service
+  getNewFoodItem() {
+    this.fs.getNewFood()
+      .subscribe(foodInfo => {
+        this.foodInfo = foodInfo;
+        console.log(this.foodInfo.name)
+        console.log(this.foodInfo.description)
+        console.log(this.foodInfo)
+        console.log(this.radius)
+      })
+  }
 
 }
