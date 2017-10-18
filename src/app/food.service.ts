@@ -17,14 +17,12 @@ export class FoodService {
   //this method is used when city/address is entered
   getFoodInfo(city, radius): Observable<any> {
 
-
-
     var url = this.baseUrl + city.replace(/\s/g, '+') + "/" + radius
 
     console.log(url)
 
     //using regex to replace spaces with a + so api request works
-    return this.http.get(this.baseUrl + city.replace(/\s/g, '+') + "/" + radius + "/")
+    return this.http.get(this.baseUrl + city.replace(/\s/g, '+') + "/" + radius + "/", {withCredentials: true})
       .map(result => {
         return result.json()
       })
@@ -37,7 +35,7 @@ export class FoodService {
 
     // console.log(url)
 
-    return this.http.get(url)
+    return this.http.get(url, {withCredentials: true})
       .map(result => {
         return result.json()
       })
@@ -46,7 +44,7 @@ export class FoodService {
   //this method is used to get a new dish, hits different endpoint to update
   getNewFood(): Observable<any> {
 
-    return this.http.get(this.updateUrl)
+    return this.http.get(this.updateUrl, {withCredentials: true})
       .map(result => {
         return result.json()
       })
