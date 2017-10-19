@@ -54,7 +54,7 @@ export class FoodService {
 
     return this.http.post(url, session)
     // return this.http.get(url)
-    //   .map(result => result.json())
+      .map(result => result.json())
 
   }
 
