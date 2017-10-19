@@ -1,6 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 
 import { FoodService } from './food.service';
+import { SessionService } from './session.service';
 import { HomeComponent } from './home/home.component';
 
 
@@ -15,8 +16,17 @@ export class AppComponent {
   foodInfo;
   coords;
   radius;
+  session;
+  result;
 
-  constructor(private fs: FoodService) { }
+  constructor(private fs: FoodService, private ss: SessionService) { }
+
+  ngOnInit() {
+    this.ss.validate();
+    console.log(this.ss.validate());
+    console.log(this.result);
+  }
+
   //main method that uses the two below it so we can search based off city/address or coordinates
   selectCity(location) {
     console.log(location);

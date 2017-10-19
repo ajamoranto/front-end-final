@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FoodService } from '../food.service';
+import { SessionService } from '../session.service';
 
 interface Coordinates {
   latitude?: number;
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     console.log("This is coords on init: " + this.coords)
     this.showPosition();
+    
   }
 
   //this method waits for location permission and emits location and radius if allowed, uses city and radius if not

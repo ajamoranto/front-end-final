@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { HomeComponent } from './home/home.component';
 import { FoodService } from './food.service';
+import { SessionService } from './session.service';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -22,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     HttpModule,
     FormsModule
   ],
-  providers: [FoodService],
+  providers: [FoodService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
