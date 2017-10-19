@@ -4,9 +4,10 @@
 <div class="row">
   <div class="col-sm-6 col-md-4 col-sm-offset-4">
     <div class="thumbnail">
+      <div class="display-header"><h3>{{foodInfo?.name}}</h3></div>
       <img src="{{foodInfo?.imageURL}}" width="100%" alt="Loading image...">
       <div class="caption">
-        <h3>{{foodInfo?.name}}</h3>
+        
         <p id="description">{{foodInfo?.description}}</p>
         <p>
           <a class="btn btn-default" role="button" (click)="onNah()">

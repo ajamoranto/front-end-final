@@ -39,13 +39,18 @@ body {
     color: white;
 }
 
+.display-header {
+    border: none;
+    text-align: center;
+    margin: 0px;
+}
+
 #description {
     color: #3B3C3F;
     font-size: 16px;
 }
     
 #mDescription {
-    color: #3B3C3F;
     font-size: 16px;
 }
     
