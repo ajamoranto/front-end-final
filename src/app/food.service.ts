@@ -25,7 +25,7 @@ export class FoodService {
 
     var url = this.baseUrl + city.replace(/\s/g, '+') + "/" + radius + "/"
 
-    let headers = new Headers({ 'Content-Type': 'application/json'});
+    let headers = new Headers({ 'Content-Type': 'application/json' });
 
     console.log(url)
 
@@ -33,18 +33,8 @@ export class FoodService {
       .map(result => {
         return result.json();
       })
-    
-
-    //using regex to replace spaces with a + so api request works
-    // return this.http.get(`${this.baseUrl}${city.replace(/\s/g, '+')}/${radius}/`, { withCredentials: true })
-    //   .map(result => {
-    //     return result.json()
-    //   })
 
   }
-
-
-
 
   //this method is used when "use my location" is used
   getFoodInfoLocation(coords, radius): Observable<any> {
@@ -53,14 +43,10 @@ export class FoodService {
     const session = { session: this.session.validate() }
 
     return this.http.post(url, session)
-    // return this.http.get(url)
+      // return this.http.get(url)
       .map(result => result.json())
 
   }
-
-
-
-
 
   //this method is used to get a new dish, hits different endpoint to update
   getNewFood(): Observable<any> {
