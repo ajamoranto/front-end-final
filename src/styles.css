@@ -175,7 +175,7 @@ h3  {
 
 @media(max-width:768px) {
     html {
-    width: 100%;
+
     height: 100%;
     background: url("/assets/images/grumble-bg-mobile.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -184,7 +184,7 @@ h3  {
     background-size: cover;}
 
     body {
-        width: 100%;
+
         height: 100%;
         background: url("/assets/images/grumble-bg-mobile.jpg") no-repeat center center fixed;
         -webkit-background-size: cover;
@@ -202,7 +202,12 @@ h3  {
     }
 
     .logo {
-        width: 30%;
+        display: none;
+    }
+
+    .navimg {
+        width:40px;
+        margin-right: 15px;
     }
 
     @media(min-width:769px) {
@@ -215,6 +220,7 @@ h3  {
         }
 
         .logo {
+            display: initial;
             width: 15%;
         }
     }
