@@ -27,7 +27,7 @@ body {
     border: none;
 }
 
-#title {
+#title, .navbar-brand {
     font-family: 'Rye', cursive;
 }
 
@@ -191,4 +191,30 @@ h3  {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;}
+    }
+
+    #title {
+        visibility: hidden;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .logo {
+        width: 30%;
+    }
+
+    @media(min-width:769px) {
+        #title {
+            visibility: visible;
+        }  
+
+        .navbar {
+            display: none;
+        }
+
+        .logo {
+            width: 15%;
+        }
     }
