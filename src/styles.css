@@ -6,10 +6,16 @@ select, option {
     background-color: #A8DEEE;
 }
 
-body {
+/* html {
     background-image: url("/assets/images/grumble-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+} */
+
+body {
+    background-image: url("/assets/images/grumble-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 120%;
 }
 
 .buttons {
@@ -168,6 +174,14 @@ h3  {
 /* responsive styling for mobile */
 
 @media(max-width:768px) {
+    html {
+
+    height: 100%;
+    background: url("/assets/images/grumble-bg-mobile.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;}
 
     body {
 
