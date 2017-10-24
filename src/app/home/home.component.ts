@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
 
   //loading position on init to reduce waiting time to use location
   ngOnInit() {
-    console.log("This is coords on init: " + this.coords)
     this.showPosition();
     
   }
@@ -41,17 +40,13 @@ export class HomeComponent implements OnInit {
   onSubmit(locationPermission) {
     if (locationPermission) {
       this.citySelected.emit({ coords: this.coords, radius: this.radius })
-      console.log("coords rad: " + this.radius)
+
     } else {
       this.citySelected.emit({ city: this.city, radius: this.radius })
-      console.log("city rad: " + this.radius)
+
     }
   }
 
-  onLocate() {
-    console.log(this.positionInfo)
-
-  }
 
   //this method is used to get the coordinates used for "use my location", alerts if not supported
   showPosition() {

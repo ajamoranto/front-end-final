@@ -27,7 +27,7 @@ export class FoodService {
 
     let headers = new Headers({ 'Content-Type': 'application/json' });
 
-    console.log(url)
+
 
     return this.http.post(url, session)
       .map(result => {

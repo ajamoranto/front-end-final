@@ -23,13 +23,12 @@ export class AppComponent {
 
   ngOnInit() {
     this.ss.validate();
-    console.log(this.ss.validate());
-    console.log(this.result);
+
   }
 
   //main method that uses the two below it so we can search based off city/address or coordinates
   selectCity(location) {
-    console.log(location);
+
     if (location && location.city) {
       this.city = location.city;
       this.radius = location.radius;
@@ -47,11 +46,7 @@ export class AppComponent {
     this.fs.getFoodInfo(selectedCity || this.city, this.radius)
       .subscribe(foodInfo => {
         this.foodInfo = foodInfo;
-        console.log(this.radius)
-        console.log(this.city)
-        console.log(this.foodInfo.name)
-        console.log(this.foodInfo.description)
-        console.log(this.foodInfo)
+
       })
   }
   //method for using location
@@ -59,10 +54,7 @@ export class AppComponent {
     this.fs.getFoodInfoLocation(coords, this.radius)
       .subscribe(foodInfo => {
         this.foodInfo = foodInfo;
-        console.log(this.foodInfo.name)
-        console.log(this.foodInfo.description)
-        console.log(this.foodInfo)
-        console.log(this.radius)
+
       })
   }
   //method for nah button to call getNewFood from service
@@ -70,10 +62,7 @@ export class AppComponent {
     this.fs.getNewFood()
       .subscribe(foodInfo => {
         this.foodInfo = foodInfo;
-        console.log(this.foodInfo.name)
-        console.log(this.foodInfo.description)
-        console.log(this.foodInfo)
-        console.log(this.radius)
+
       })
   }
 
