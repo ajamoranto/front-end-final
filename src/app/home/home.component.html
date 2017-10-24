@@ -1,17 +1,17 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-      <div class="navbar-header">
-          
-        <a class="navbar-brand" href="#">Dish Pics</a>
-        <img alt="Brand" class="navimg pull-right" src="/assets/images/dish-logo-nav.png">
-      </div>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">DISH PICS</a>
+      <img alt="Brand" class="navimg pull-right" src="/assets/images/dish-logo-nav.png">
+    </div>
   </div>
 </nav>
-<br><br>
+<br>
+<br>
 <div id="content">
   <div style="text-align:center">
     <br>
-    <img class ="logo" src="/assets/images/dish-logo.png">
+    <img class="logo" src="/assets/images/dish-logo.png">
     <h1 id="title">
       DISH PICS
     </h1>
@@ -25,20 +25,22 @@
       </div>
       <div class="col col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
         <div class="range range-success">
-          <input id="radius" type="range" name="radius" min="1" max="15" value="2" [(ngModel)]="radius" onchange="rangeSuccess.value=value">
-          <output id="rangeSuccess">Distance: 2</output>
+          <input id="radius" type="range" name="radius" min="1" max="15" value="5" [(ngModel)]="radius" onchange="rangeSuccess.value=value">
+          <output id="rangeSuccess">Distance: 5</output>
         </div>
       </div>
     </form>
   </div>
   <div class="buttons">
     <br>
-    <button (click)="onSubmit()" type="submit" class="btn btn-success" id="go"><span class="fa fa-cutlery"></span> Search</button>
-    <button *ngIf="coords" type="button" class="btn btn-primary" (click)="onSubmit(true)"><span class="fa fa-location-arrow"></span> Use my location</button>
+    <button (click)="onSubmit()" type="submit" class="btn btn-success" id="go">
+      <span class="fa fa-cutlery"></span> Search</button>
+    <button *ngIf="coords" type="button" class="btn btn-primary" (click)="onSubmit(true)">
+      <span class="fa fa-location-arrow"></span> Use my location</button>
   </div>
 </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="container">
-    
+
   </div>
 </nav>

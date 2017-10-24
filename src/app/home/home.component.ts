@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   cityForm: NgForm;
   city = "";
-  radius = "2";
+  radius = "5";
   foodInfo;
   positionInfo;
   coords: Coordinates;
