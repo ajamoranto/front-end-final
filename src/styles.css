@@ -18,6 +18,11 @@ body {
     background-size: 120%;
 }
 
+.disImg {
+    width: 352px !important;
+    height: 352px !important;
+}
+
 .buttons {
     text-align: center;
 }
@@ -176,12 +181,12 @@ h3  {
 @media(max-width:768px) {
     html {
 
-    height: 100%;
-    background: url("/assets/images/grumble-bg-mobile.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;}
+        height: 100%;
+        background: url("/assets/images/grumble-bg-mobile.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;}
 
     body {
 
@@ -210,17 +215,17 @@ h3  {
         margin-right: 15px;
     }
 
-    @media(min-width:769px) {
-        #title {
-            visibility: visible;
-        }  
+@media(min-width:769px) {
+    #title {
+        visibility: visible;
+    }  
 
-        .navbar {
-            display: none;
-        }
-
-        .logo {
-            display: initial;
-            width: 15%;
-        }
+    .navbar {
+        display: none;
     }
+
+    .logo {
+        display: initial;
+        width: 15%;
+    }
+}
