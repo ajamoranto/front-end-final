@@ -28,7 +28,7 @@ body {
 }
 
 .thumbnail {
-    background-color: rgba(255, 255, 255, 0.36);
+    background-color: rgba(255, 255, 255, 0.66);
     border: none;
 }
 
@@ -36,7 +36,7 @@ body {
     font-family: 'Rye', cursive;
 }
 
-#directions, #info {
+#directions, #info, #phone {
     color: white;
 }
 

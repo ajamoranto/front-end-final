@@ -7,7 +7,7 @@
       <img src="{{foodInfo?.imageURL}}" class="disImg" alt="Loading image...">
       <div class="caption">
         
-        <!-- <p id="description">{{foodInfo?.description}}</p> -->
+        <p id="description">{{foodInfo?.description}}</p>
         <p>
           <a class="btn btn-default" role="button" (click)="onNah()">
             <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"> </span> Nah!</a>
@@ -33,7 +33,7 @@
         <a id="directions" href="https://www.google.com/maps/place/{{foodInfo?.restaurant?.address}}+{{foodInfo?.restaurant?.city}}+{{foodInfo?.restaurant?.state}}"
           target="_blank">
           <span class="fa fa-map"></span> {{foodInfo?.restaurant?.address}}</a>
-        <br> {{foodInfo?.restaurant?.phone}}
+        <br> <a id="phone" href="tel:{{foodInfo?.restaurant?.phone}}"><span class="fa fa-phone"></span> {{foodInfo?.restaurant?.phone}}</a>
       </div>
       <div class="modal-body">
         <img src="{{foodInfo?.imageURL}}" width="100%" alt="Loading image...">
