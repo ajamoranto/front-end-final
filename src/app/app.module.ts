@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule }   from '@angular/router';
 import { AppRoutingModule } from './routing/routing.module';
 import { HttpModule } from '@angular/http';
+import 'hammerjs';
+import 'hammer-timejs';
 
 import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';

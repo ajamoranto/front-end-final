@@ -4,7 +4,7 @@
   <div class="col-sm-4 col-md-4 col-sm-offset-4">
     <div class="thumbnail">
       <div class="display-header"><h3>{{foodInfo?.name}}</h3></div>
-      <img src="{{foodInfo?.imageURL}}" class="disImg" alt="Loading image...">
+      <img src="{{foodInfo?.imageURL}}" class="disImg" alt="Loading image..." (swipeleft)="onNah()" (swiperight)="onYah()">
       <div class="caption">
         
         <p id="description">{{foodInfo?.description}}</p>

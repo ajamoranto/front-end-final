@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FoodService } from '../food.service';
-
+declare var $:any;
 
 @Component({
   selector: 'app-display',
@@ -25,7 +25,7 @@ export class DisplayComponent implements OnInit {
   }
 
   onYah() {
-    this.yah.emit()
+    $('#myModal').modal('show');
   }
 
 }
